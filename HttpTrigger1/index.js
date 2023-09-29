@@ -4,7 +4,7 @@ module.exports = async function (context, req) {
 
     const apiKey = process.env.API_KEY;
 
-    context.log('JavaScript HTTP trigger function processed a request.');
+    context.log('JavaScript HTTP trigger function processed a new request.');
 
     const name = (req.query.name || (req.body && req.body.name));
     const responseMessage = name
