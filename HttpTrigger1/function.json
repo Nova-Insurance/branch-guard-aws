@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-      "route": "lock" 
+      "route": "protection" 
     },
     {
       "type": "http",
