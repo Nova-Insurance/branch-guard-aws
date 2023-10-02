@@ -2,7 +2,7 @@ module.exports = async function (context, req) {
     const { Octokit } = require("octokit");
     require('dotenv').config();
 
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.GITHUB_API_KEY;
 
     context.log('JavaScript HTTP trigger function processed a new request.');
 
