@@ -1,13 +1,10 @@
 module.exports = async function (context, req) {
-    const { Octokit, App } = require("octokit");
-    const express = require('express');
+    const { Octokit } = require("octokit");
     require('dotenv').config();
 
     const apiKey = process.env.API_KEY;
 
     context.log('JavaScript HTTP trigger function processed a new request.');
-
-    const app = express();
 
     const octokit = new Octokit({ auth: apiKey });
 
