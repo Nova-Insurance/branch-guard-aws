@@ -19,6 +19,8 @@ A GitHub project for automating repository management tasks and ensuring securit
 
 ### Local Development
 
+![Alt text](/local.png)
+
 1. **Clone the repository**
    ```bash
    git clone https://github.com/your_username/branch-guard.git
@@ -72,6 +74,8 @@ A GitHub project for automating repository management tasks and ensuring securit
 7. Logs will be printed locally.
 
 ### Serverless Deployment (Azure Functions)
+
+![Alt text](/cloud.png)
 
 1. Login to Azure account in VS Code.
 
