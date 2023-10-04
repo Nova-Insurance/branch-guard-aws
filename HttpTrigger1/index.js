@@ -74,11 +74,30 @@ async function handleRepositoryEvent(context, data) {
         }
 
         try {
+
+            const issueBody = `
+                        # 🔐 Branch Protection Enabled #
+
+                        Exciting news! We've implemented enhanced protections for the main branch:
+
+                        1. **Require Pull Request before Merging**: All changes to the main branch must now go through a pull request. This allows for thorough review and discussion before merging.
+
+                        2. **Require Code Owner Reviews**: Code owners, our trusted experts, will review and approve pull requests before they can be merged.
+
+                        3. **Minimum Approving Reviews**: A minimum of 2 approving reviews are required before a pull request can be merged.
+
+                        4. **Last Push Approval Required**: The last push to the branch must also have received approval.
+
+                        These measures ensure that changes to the main branch are meticulously reviewed and approved, ensuring code quality and stability!
+
+                        For any feedback or assistance contact @nanospeck
+                    `;
+
             const response_issue = await octokit.request('POST /repos/{owner}/{repo}/issues', {
                 owner,
                 repo,
                 title: '🔐 Branch protection enabled',
-                body: 'Great news! The main branch is now protected. Special thanks to @nanospeck for setting this up!',
+                body: issueBody,
                 assignees: ['nanospeck'],
                 labels: ['branch-settings'],
                 headers: {
