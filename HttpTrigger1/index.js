@@ -59,7 +59,9 @@ async function handleRepositoryEvent(context, data) {
                 headers: {
                     'X-GitHub-Api-Version': '2022-11-28'
                 },
+                required_status_checks: null,
                 enforce_admins: true,
+                required_pull_request_reviews: null,
                 restrictions: null
             });
             context.log('Branch protection enforced:', response_protection.data);
