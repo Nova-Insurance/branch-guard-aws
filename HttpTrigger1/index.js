@@ -76,7 +76,7 @@ async function handleRepositoryEvent(context, data) {
         try {
 
             const issueBody = `
-🔐 Branch Protection Enabled
+# 🔐 Branch Protection Enabled #
 
 Exciting news! We've implemented enhanced protections for the main branch:
 
