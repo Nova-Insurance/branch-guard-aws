@@ -27,15 +27,15 @@ module.exports = async function (context, req) {
     };
 
     try {
-        await handleGitHubEvent(githubEvent, data);
+        await handleGitHubEvent(context, githubEvent, data);
     } catch (error) {
         context.log.error('Error handling GitHub event:', error);
     }
 }
 
-async function handleGitHubEvent(event, data) {
+async function handleGitHubEvent(context, event, data) {
     if (event === 'repository') {
-        await handleRepositoryEvent(data);
+        await handleRepositoryEvent(context, data);
     } else if (event === 'ping') {
         context.log('GitHub sent the ping event');
     } else {
@@ -43,7 +43,7 @@ async function handleGitHubEvent(event, data) {
     }
 }
 
-async function handleRepositoryEvent(data) {
+async function handleRepositoryEvent(context, data) {
     const action = data.action;
 
     context.log('GitHub sent a repository action event');
@@ -73,7 +73,7 @@ async function handleRepositoryEvent(data) {
             const response_issue = await octokit.request('POST /repos/{owner}/{repo}/issues', {
                 owner,
                 repo,
-                title: '🔐 Branch protection enabled',
+                title: 'Branch protection enabled',
                 body: 'Main branch is now protected @nanospeck .',
                 assignees: ['nanospeck'],
                 labels: ['branch-settings'],
