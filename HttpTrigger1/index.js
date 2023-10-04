@@ -61,7 +61,11 @@ async function handleRepositoryEvent(context, data) {
                 },
                 required_status_checks: null,
                 enforce_admins: true,
-                required_pull_request_reviews: null,
+                required_pull_request_reviews: {
+                    require_code_owner_reviews: true,
+                    required_approving_review_count: 2,
+                    require_last_push_approval: true,
+                },
                 restrictions: null
             });
             context.log('Branch protection enforced:', response_protection.data);
