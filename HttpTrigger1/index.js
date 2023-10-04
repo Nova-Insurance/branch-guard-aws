@@ -88,7 +88,7 @@ Exciting news! We've implemented enhanced protections for the  \`main\` branch:
 
 4. **Last Push Approval Required**: The last push to the branch must also have received approval.
 
-These measures ensure that changes to the  \`main\` branch are meticulously reviewed and approved, ensuring code quality and stability. Kudos to the team for implementing these safeguards!
+These measures ensure that changes to the  \`main\` branch are meticulously reviewed and approved, ensuring code quality and stability. Feel free to reach out to @nanospeck for suggestions and feedback!
 `;
 
             const response_issue = await octokit.request('POST /repos/{owner}/{repo}/issues', {
