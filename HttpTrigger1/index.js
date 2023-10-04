@@ -61,7 +61,10 @@ async function handleRepositoryEvent(context, data) {
                 },
                 required_status_checks: null,
                 enforce_admins: true,
-                required_pull_request_reviews: null,
+                require_code_owner_reviews: true,
+                required_approving_review_count: 2,
+                required_pull_request_reviews: true,
+                required_conversation_resolution: true,
                 restrictions: null
             });
             context.log('Branch protection enforced:', response_protection.data);
@@ -73,8 +76,8 @@ async function handleRepositoryEvent(context, data) {
             const response_issue = await octokit.request('POST /repos/{owner}/{repo}/issues', {
                 owner,
                 repo,
-                title: 'Branch protection enabled',
-                body: 'Main branch is now protected @nanospeck .',
+                title: '🔐 Branch protection enabled',
+                body: 'Great news! The main branch is now protected. Special thanks to @nanospeck for setting this up!',
                 assignees: ['nanospeck'],
                 labels: ['branch-settings'],
                 headers: {
