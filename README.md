@@ -7,7 +7,7 @@
       - [Github Webhook Configuration](#github-webhook-configuration)
     - [☁️ Serverless Deployment (Azure Functions)](#️-serverless-deployment-azure-functions)
     - [⚙️ Github Workflow Configuration (Automate deployments)](#️-github-workflow-configuration-automate-deployments)
-    - [Response codes](#response-codes)
+    - [✉️ Response codes](#️-response-codes)
   - [📖 Readings \& References](#-readings--references)
   - [❤️ Future Enhancements](#️-future-enhancements)
   - [License](#license)
@@ -123,7 +123,7 @@ When starting the app locally, Github webhook has no visibility of your localhos
 For more reference, check out [Microsoft Azure Functions GitHub Actions guide](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-github-actions?tabs=windows%2Cjavascript&pivots=method-manual#example-workflow-configuration-file).
 
 
-### Response codes
+### ✉️ Response codes
 
 | Response code | Meaning                                       |
 |---------------|-----------------------------------------------|
