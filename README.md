@@ -153,6 +153,7 @@ For more reference, check out [Microsoft Azure Functions GitHub Actions guide](h
 
 ## ❤️ Future Enhancements ##
 
+- Function: Create github issue if there was a failure to protect the branch too
 - Upgrade us of Github API to Github App
 - Use database to store and track api calls
 - Add Rate limiting checks
